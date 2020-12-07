@@ -13,8 +13,20 @@ let total = 0;
 
 while (input !== null) {
   input = prompt('Введите число:');
-  numbers.push(Number(input));
+
+  if (input === null) {
+    break;
+  }
+
+  input = Number(input);
+
+  if (Number.isNaN(input)) {
+    alert('Введено не число, попробуйте еще раз');
+  } else {
+    numbers.push(Number(input));
+  }
 }
+
 console.log(numbers);
 
 for (const item of numbers) {
